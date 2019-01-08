@@ -5,18 +5,18 @@ from scrapy.item import Item, Field
 
 
 class SiteProductItem(Item):
-    title = Field()
-    brand = Field()
-    price = Field()
-    original_price = Field()
-    discount_rate = Field()
+    date = Field()
+    total_reviews = Field()
+    total_keywords = Field()
+    total_leads = Field()
+    top_ranking_keywords = Field()
 
 
 class MyScraper (scrapy.Spider):
     name = "brightlocal"
-    allowed_domains = ['www.lantronix.com']
-    DOMAIN_URL = "https://www.lantronix.com"
-    START_URL = 'https://www.lantronix.com/products-class/it-infrastructure-management/'
+    allowed_domains = ['tools.brightlocal.com']
+    DOMAIN_URL = "https://tools.brightlocal.com"
+    START_URL = 'https://tools.brightlocal.com/seo-tools/admin/location-dashboard/location/1000243/lsrc/view?campaignId=968505#/'
     settings.overrides['ROBOTSTXT_OBEY'] = False
 
     def __init__(self, **kwargs):
